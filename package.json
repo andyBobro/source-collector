@@ -1,0 +1,31 @@
+{
+  "name": "source-collector",
+  "version": "0.0.1",
+  "description": "Utility to collect file content and generate output in txt or json format",
+  "main": "dist/index.js",
+  "bin": {
+    "file-collector": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"No tests yet\"",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "file",
+    "utility",
+    "cli",
+    "json",
+    "txt"
+  ],
+  "author": "BroBobro",
+  "license": "MIT",
+  "dependencies": {
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.10",
+    "@types/yargs": "^17.0.33",
+    "typescript": "^5.2.0"
+  }
+}
