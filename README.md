@@ -106,6 +106,7 @@ import { FileCollector } from 'file-collector';
   // Save the output to a file
   await collector.saveOutput('output.json');
 })();
+```
 
 #### API
 
@@ -118,6 +119,7 @@ import { FileCollector } from 'file-collector';
 
 
 
+
 #### Options
 
 | Option           | Type         | Default           | Required | Description                                         |
@@ -125,5 +127,5 @@ import { FileCollector } from 'file-collector';
 | `includeDirs`     | `string[]`   | `All directories` | No       | List of directories to include (relative to root). |
 | `excludeDirs`     | `string[]`   | `node_modules`    | No       | List of directories to exclude (relative to root). |
 | `outputFormat`    | `string`     | `json`            | No       | Output format: `txt` or `json`.                   |
-```
+
 
