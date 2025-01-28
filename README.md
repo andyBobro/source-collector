@@ -44,7 +44,7 @@ npm link
 - Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/file-collector.git
+git clone https://github.com/andyBobro/file-collector.git
 cd file-collector
 ```
 
