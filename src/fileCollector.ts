@@ -16,7 +16,7 @@ export class FileCollector {
   constructor(rootDir: string, options: Options = {}) {
     this.rootDir = rootDir;
     this.includeDirs = options.includeDirs || [];
-    this.excludeDirs = options.excludeDirs || ['node_modules'];
+    this.excludeDirs = ['node_modules', '.git', ...options.excludeDirs || []];
     this.outputFormat = options.outputFormat || 'json';
   }
 
