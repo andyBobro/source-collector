@@ -1,6 +1,6 @@
 {
   "name": "source-collector",
-  "version": "0.0.11-alpha",
+  "version": "0.0.11-beta",
   "description": "Utility to collect file content and generate output in txt or json format",
   "main": "dist/index.js",
   "bin": {
