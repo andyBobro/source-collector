@@ -1,13 +1,13 @@
 # File Collector
 
-`file-collector` is a utility for collecting the contents of files from a specified project directory, offering flexible options for included/excluded directories and output formats. It works as both a Node.js module and a CLI tool.
+`source-collector` is a utility for collecting the contents of sources from a specified project directory. It offers flexible options for included/excluded directories and output formats. It is both a Node.js module and a CLI tool.
 
 ## Features
 
-- Collect the content of all files in a project directory.
+- Collect the content of all sources in a project directory.
 - Flexible options to include or exclude specific directories.
 - Output the results in either:
-  - **TXT format** with file paths and contents.
+  - **TXT format** with source paths and contents.
   - **JSON format** as a structured object.
 - Use it programmatically in Node.js or directly via CLI.
 
@@ -18,13 +18,13 @@
 ### From NPM (Global Install)
 
 ```bash
-npm install -g file-collector
+npm install -g source-collector
 ```
 
 ## Local Development (Without Publishing to NPM)
 
 - Clone the repository or set up the package locally.
-- Compile the TypeScript files:
+- Compile the TypeScript sources:
 
 ```bash
 npm run build
@@ -44,8 +44,8 @@ npm link
 - Clone the repository:
 
 ```bash
-git clone https://github.com/andyBobro/file-collector.git
-cd file-collector
+git clone https://github.com/andyBobro/source-collector.git
+cd source-collector
 ```
 
 ### Install Dependencies
@@ -63,17 +63,18 @@ Compile the TypeScript source code into JavaScript:
 ```bash
 npm run build
 ```
+---
 
 ## Usage
 
 ### CLI Usage
 
-After installation or linking, you can run the file-collector command from your terminal.
+After installation or linking, you can run the source-collector command from your terminal.
 
 #### Basic Command
 
 ```bash
-file-collector --outputPath output.json
+source-collector --outputPath output.json
 ```
 
 ### Options
@@ -90,7 +91,7 @@ file-collector --outputPath output.json
 #### Basic usage
 
 ```typescript
-import { FileCollector } from 'file-collector';
+import { FileCollector } from 'source-collector';
 
 (async () => {
   const collector = new FileCollector(process.cwd(), {
@@ -103,7 +104,7 @@ import { FileCollector } from 'file-collector';
   const output = await collector.generateOutput();
   console.log(output);
 
-  // Save the output to a file
+  // Save the output to a source
   await collector.saveOutput('output.json');
 })();
 ```
@@ -112,10 +113,10 @@ import { FileCollector } from 'file-collector';
 
 | Method                     | Parameters                                                                                     | Returns                              | Description                                                                 |
 |----------------------------|-----------------------------------------------------------------------------------------------|--------------------------------------|-----------------------------------------------------------------------------|
-| `constructor`              | `rootDir: string` - The root directory to start collecting files.                              | `FileCollector` instance            | Creates an instance of `FileCollector` with the given root directory and options. |
+| `constructor`              | `rootDir: string` - The root directory to start collecting sources.                              | `FileCollector` instance            | Creates an instance of `FileCollector` with the given root directory and options. |
 |                            | `options: { includeDirs?: string[], excludeDirs?: string[], outputFormat?: 'txt' | 'json' }`                            |                                      | Includes options for directory inclusion, exclusion, and output format.    |
-| `generateOutput`           | None                                                                                          | `Promise<string>` or `Promise<Record<string, { path: string; content: string }>>` | Collects file content and generates the output in memory as JSON or TXT.   |
-| `saveOutput`               | `filePath: string` - The path where the output will be saved.                                  | `Promise<void>`                     | Saves the generated output (JSON or TXT) to the specified file path.        |
+| `generateOutput`           | None                                                                                          | `Promise<string>` or `Promise<Record<string, { path: string; content: string }>>` | Collects source content and generates the output in memory as JSON or TXT.   |
+| `saveOutput`               | `sourcePath: string` - The path where the output will be saved.                                  | `Promise<void>`                     | Saves the generated output (JSON or TXT) to the specified source path.        |
 
 
 

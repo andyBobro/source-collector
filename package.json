@@ -1,10 +1,10 @@
 {
   "name": "source-collector",
-  "version": "0.0.1",
+  "version": "0.0.11-alpha",
   "description": "Utility to collect file content and generate output in txt or json format",
   "main": "dist/index.js",
   "bin": {
-    "file-collector": "dist/cli.js"
+    "source-collector": "dist/cli.js"
   },
   "scripts": {
     "build": "tsc",
